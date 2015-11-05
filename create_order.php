@@ -15,8 +15,11 @@ $Amount = 2000;	// Amount in cents
 $AllowRecurring = 'true'; // This flag will prompt the customer to accept recurring payments in tbe future.
 $RequestLang = 'el-GR'; //This will display the payment page in English (default language is Greek)
 $Source = 'Default'; // This will assign the transaction to the Source with Code = "Default". If left empty, the default source will be used.
-$ServiceId =4;
+
 $postargs = 'Amount='.urlencode($Amount).'&AllowRecurring='.$AllowRecurring.'&RequestLang='.$RequestLang.'&Source='.$Source;
+
+	
+	
 
 // Get the curl session object
 $session = curl_init($request);
@@ -59,15 +62,11 @@ if ($resultObj->ErrorCode==0){	//success when ErrorCode = 0
 	/*echo 'Your Order Code is: <b>'. $orderId.'</b>';
 	echo '<br/><br/>';
 	echo 'To simulate a successfull payment, use the credit card 4111 1111 1111 1111, with a valid expiration date and 111 as CVV2.';
-	echo '</br/><a href="http://demo.vivapayments.com/web/newtransaction.aspx?ref='.$orderId.'" >Make Payment</a>';
-	
+	echo '</br/><a href="http://demo.vivapayments.com/web/newtransaction.aspx?ref='.$orderId.'" >Make Payment</a>';			`	
 */
-
 	// redirect("http://demo.vivapayments.com/web/newtransaction.aspx?ref='.$orderId.'");
 	 header('Location: http://demo.vivapayments.com/web/newtransaction.aspx?ref='.$orderId.''); 
-
 }
-	
 else{
 	echo 'The following error occured: ' . $resultObj->ErrorText;
 }

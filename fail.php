@@ -4,8 +4,7 @@
 	//$parts = parse_url($url);
 	//parse_str($parts['query'], $query);
 	//$test=$query['t'];
-$test=0;
-echo $test;
+	//$test=3;
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +23,10 @@ echo $test;
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
-<script type="text/javascript">
+	<script type="text/javascript">
 	 $(document).ready(function(){
-    	    $('#payment').openModal();
+    	
+    	$('.modal-trigger').leanModal();
   
   });
 </script>
@@ -34,12 +34,9 @@ echo $test;
   <div id="payment" class="modalPayment modal">
   	
     <div class="modal-content center-align">
-    <h4>Σας ευχαριστούμε!</h4>
-      <?php if($test!==0) {
-      	echo 'Η πληρωμή ολοκληρώθηκε με επιτυχία.
-		Σύντομα θα λάβετε email σχετικά΄με το θέμα σας.';
-		}else{
-			echo "Παρακαλώ προσπαθείστε ξανα";
+    <h4>Λυπούμαστε</h4>
+      <?php if($test==0) {
+      	echo 'Η συναλλαγή σας δεν μπορεί να ολοκληρωθεί παρακαλούμε προσπαθήστε ξανά.';
 		}
       ?>
     </div>

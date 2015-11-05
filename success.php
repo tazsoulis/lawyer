@@ -1,10 +1,10 @@
 <?php 
 
 	//$url = $_SERVER['REQUEST_URI'];
-	//$parts = parse_url($url);
+//	$parts = parse_url($url);
 	//parse_str($parts['query'], $query);
 	//$test=$query['t'];
-$test=0;
+$test=4;
 echo $test;
 ?>
 

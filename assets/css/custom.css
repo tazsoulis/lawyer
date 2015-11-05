@@ -81,3 +81,19 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     box-sizing: content-box;
     transition: all .3s;
 }
+
+.modalPayment {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #60796F!important;
+    padding: 0;
+    max-height: 75%;
+    width: 26%!important;;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 22px!important;
+    will-change: top, opacity;
+    top: 40%!important;
+}
