@@ -97,3 +97,10 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     will-change: top, opacity;
     top: 40%!important;
 }
+.modal .modal-footer {
+    border-radius: 0 0 2px 2px;
+    background-color: #FAEBD7!important;
+    padding: 4px 6px;
+    height: 56px;
+    width: 100%;
+}

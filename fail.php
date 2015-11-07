@@ -1,12 +1,12 @@
 <?php 
+	//session_start();
+	$url = $_SERVER['REQUEST_URI'];
+	$parts = parse_url($url);
+	parse_str($parts['query'], $query);
+	$tmp=$query['t'];
 
-	//$url = $_SERVER['REQUEST_URI'];
-	//$parts = parse_url($url);
-	//parse_str($parts['query'], $query);
-	//$test=$query['t'];
-	//$test=3;
+
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,37 +17,27 @@
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
 	<link rel="stylesheet" href="assets/css/custom.css">
+	<link rel="stylesheet" href="assets/css/sweetalert.css">
 
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
-	<script type="text/javascript">
-	 $(document).ready(function(){
-    	
-    	$('.modal-trigger').leanModal();
-  
-  });
-</script>
-  <!-- Modal Structure -->
-  <div id="payment" class="modalPayment modal">
-  	
-    <div class="modal-content center-align">
-    <h4>Λυπούμαστε</h4>
-      <?php if($test==0) {
-      	echo 'Η συναλλαγή σας δεν μπορεί να ολοκληρωθεί παρακαλούμε προσπαθήστε ξανά.';
-		}
-      ?>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Κλείσιμο</a>
-    </div>
-  </div>
+	
+<?php
 
+	if(isset($tmp)){
+		echo '<script type="text/javascript">';
+	  	echo 'setTimeout(function () { swal("Σας ευχαριστούμε!","Η αποστολή των στοιχείων σας έγινε με απόλυτη επιτυχία.!","success");';
+	  	echo '}, 1000);</script>';
+	} else{
+		echo '<script type="text/javascript">';
+	  	echo 'setTimeout(function () { swal("Λυπούμαστε!","Η συναλλαγή δεν ολοκληρώθηκε!","error");';
+	  	echo '}, 1000);</script>';
+	}
 
-
-
+?>
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m8 offset-m2">
@@ -66,7 +56,7 @@
 						<div class="col s10 offset-s1">
 							<h5 class="white-text full-text first-paragraph"><p >Το νομικό μας επιτελείο έχοντας πολυετή εμπειρία είναι σε θέση να απαντήσει σε κάθε νομικό σας ζήτημα ελληνικού δικαίου με απόλυτη εχεμύθεια.</p><p> Θέστε μας παρακάτω το θέμα που σας απασχολεί και εμείς δεσμευόμαστε να σας απαντήσουμε εντός τριών ωρών*.</p><p>Χωρίς δεσμεύσεις, χωρίς εγγραφές χρηστών. Τα στοιχεία σας χρησιμοποιούνται μόνο για την έκδοση απόδειξης/τιμολογίου.</p>ΤΙΜΗ 20 ευρώ η ερώτηση (ΤΟ ΦΠΑ 23% ΣΥΜΠΕΡΙΛΑΜΒΑΝΕΤΑΙ)</p><p>ΕΓΓΥΗΣΗ ΕΠΙΣΤΡΟΦΗΣ ΧΡΗΜΑΤΩΝ</p><p>Αν δεν σας απαντήσουμε εντός 24 ωρών σας επιστρέφουμε τα χρήματα σας!</p></h5>
 
-							<form action="create_order.php" method="GET" onsubmit="return checkforblank()"  class="col s12 spacer-50">
+							<form action="create_order.php" method="POST" onsubmit="return checkforblank()"  class="col s12 spacer-50">
 								<div class="row">
 									<div class="input-field col l10 offset-l1 m12">
 										<i class="material-icons prefix">perm_identity</i>
@@ -90,8 +80,8 @@
 									<a class="waves-effect waves-light  modal-trigger" href="#modal1">χρήσης</a>
 								</p>
 								<div class="row">
-									<div class="col s4 offset-s4">
-										<button type="submit" class="waves-effect waves-light btn-large">ΡΩΤΗΣΤΕ ΜΑΣ ΤΩΡΑ!</button>	
+									<div class="center-align">
+										<button type="submit" style="width:200px;" class="waves-effect waves-light btn-large">ΡΩΤΗΣΤΕ ΜΑΣ ΤΩΡΑ!</button>	
 									</div>
 								</div>
 							</form>
@@ -185,6 +175,7 @@
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="assets/js/materialize.min.js"></script>
+	<script type="text/javascript" src="assets/js/sweetalert.min.js"></script>
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 </body>
 </html>
