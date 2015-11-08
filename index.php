@@ -5,6 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="shortcut icon" href="assets/img/logo.ico">
 	<title>Νομική Συμβουλή</title>
 	<!--Import Google Icon Font-->
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,12 +26,12 @@
 				<div class="card blue-grey darken-1">
 					<div class="row">
 						<div class="col s10 offset-s1 m4 offset-m4">
-							<div class="card-content white-text">
+							<div class="center-align">
 								<img class="logo" src="assets/img/logo.png">
 							</div>
 						</div>
 						<div class="col s12 m10 offset-m1">
-							<h5 class="center-align spacer-90">ΨΑΧΝΕΤΕ ΛΥΣΗ ΣΤΟ ΠΡΟΒΛΗΜΑ ΣΑΣ;<br><br>ΡΩΤΗΣΤΕ ΜΑΣ ΤΩΡΑ!</h5>
+							<h5 class=" white-text center-align spacer-90">ΨΑΧΝΕΤΕ ΛΥΣΗ ΣΤΟ ΠΡΟΒΛΗΜΑ ΣΑΣ;<br><br>ΡΩΤΗΣΤΕ ΜΑΣ ΤΩΡΑ!</h5>
 						</div>
 					</div>
 					<div class="row">
@@ -57,12 +58,12 @@
 								</div>
 								<p class="center-align">
 									<input type="checkbox" name="checked" id="checked" />
-									<label for="checked">Αποδέχομαι τους όρους</label>
-									<a class="waves-effect waves-light  modal-trigger" href="#modal1">χρήσης</a>
+									<label for="checked">Αποδέχομαι τους</label>
+									<a class="waves-effect waves-light  modal-trigger" href="#modal1"> όρους χρήσης</a>
 								</p>
 								<div class="row">
 									<div class="center-align">
-										<button type="submit" style="width:200px;" class="waves-effect waves-light btn-large">ΡΩΤΗΣΤΕ ΜΑΣ ΤΩΡΑ!</button>	
+										<button type="submit" style="width:205px;" class="waves-effect waves-light btn-large">ΡΩΤΗΣΤΕ ΜΑΣ ΤΩΡΑ!</button>	
 									</div>
 								</div>
 							</form>

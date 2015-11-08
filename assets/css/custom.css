@@ -16,7 +16,9 @@ body{
 
 .logo{
     margin-bottom: -72px;
-    height: 166px;
+    height: 180px;
+    border-radius: 15px;
+    margin-top: 10px;
 }
 
 .advice{
