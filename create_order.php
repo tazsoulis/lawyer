@@ -1,16 +1,13 @@
 <?php 
-
 	session_start();
 	$_SESSION['data']=[];
 	$_SESSION['data']=$_POST;
-
-
 // The POST URL and parameters
-$request =  'http://demo.vivapayments.com/api/orders';	// demo environment URL
-//$request =  'https://www.vivapayments.com/api/orders';	// production environment URL
+//$request =  'http://demo.vivapayments.com/api/orders';	// demo environment URL
+$request =  'https://www.vivapayments.com/api/orders';	// production environment URL
 // Your merchant ID and API Key can be found in the 'Security' settings on your profile.
-$MerchantId = 'b6edfbad-05fa-4f75-b352-04d5a73a6a33';
-$APIKey = 'b3Lo%m'; 	
+$MerchantId = '5df1955e-8c2b-422b-bb0b-81b0d7e15e59';
+$APIKey = '7P+p^O'; 	
 //Set the Payment Amount
 $Amount = 2000;	// Amount in cents
 //Set some optional parameters (Full list available here: https://github.com/VivaPayments/API/wiki/Optional-Parameters)
@@ -20,7 +17,6 @@ $Source = 'Default'; // This will assign the transaction to the Source with Code
 $postargs = 'Amount='.urlencode($Amount).'&AllowRecurring='.$AllowRecurring.'&RequestLang='.$RequestLang.'&Source='.$Source;
 // Get the curl session object
 $session = curl_init($request);
-
 // Set the POST options.
 curl_setopt($session, CURLOPT_POST, true);
 curl_setopt($session, CURLOPT_POSTFIELDS, $postargs);
@@ -48,11 +44,11 @@ try {
 }
 if ($resultObj->ErrorCode==0){	//success when ErrorCode = 0
 	$orderId = $resultObj->OrderCode;
-	/*echo 'Your Order Code is: <b>'. $orderId.'</b>';
-	echo '<br/><br/>';
-	echo 'To simulate a successfull payment, use the credit card 4111 1111 1111 1111, with a valid expiration date and 111 as CVV2.';
-	echo '</br/><a href="http://demo.vivapayments.com/web/newtransaction.aspx?ref='.$orderId.'" >Make Payment</a>';*/
-	header("Location: http://demo.vivapayments.com/web/newtransaction.aspx?ref=$orderId");
+	//echo 'Your Order Code is: <b>'. $orderId.'</b>';
+	//echo '<br/><br/>';
+	//echo 'To simulate a successfull payment, use the credit card 4111 1111 1111 1111, with a valid expiration date and 111 as CVV2.';
+	//echo '</br/><a href="http://demo.vivapayments.com/web/newtransaction.aspx?ref='.$orderId.'" >Make Payment</a>';
+	header("Location: https://www.vivapayments.com/web/newtransaction.aspx?ref=$orderId");
 }
 	
 else{

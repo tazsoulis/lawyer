@@ -1,5 +1,5 @@
 <?php 
-	//session_start();
+	session_start();
 	$url = $_SERVER['REQUEST_URI'];
 	$parts = parse_url($url);
 	parse_str($parts['query'], $query);
@@ -29,10 +29,7 @@
 <?php
 
 	if(isset($tmp)){
-		echo '<script type="text/javascript">';
-	  	echo 'setTimeout(function () { swal("Σας ευχαριστούμε!","Η αποστολή των στοιχείων σας έγινε με απόλυτη επιτυχία.!","success");';
-	  	echo '}, 1000);</script>';
-	} else{
+	
 		echo '<script type="text/javascript">';
 	  	echo 'setTimeout(function () { swal("Λυπούμαστε!","Η συναλλαγή δεν ολοκληρώθηκε!","error");';
 	  	echo '}, 1000);</script>';
@@ -43,10 +40,20 @@
 		<div class="row">
 			<div class="col s12 m8 offset-m2">
 				<div class="card blue-grey darken-1">
-					<div class="row">
-						<div class="col s10 offset-s1 m4 offset-m4">
-							<div class="card-content white-text">
-								<img class="logo" src="assets/img/logo.png">
+					<div class="row center-align">
+						<div class="col s12">
+							<div class="center-align hide-on-med-and-down">
+								<img class="logo center-align" src="assets/img/logob.png">
+							</div>
+						</div>
+						<div class="col s12 hide-on-large-only">
+							<div class="center-align">
+								<img class="logo center-align" src="assets/img/logo.png">
+							</div>
+						</div>
+						<div class="col s12 l10 offset-l1 hide-on-large-only" style="margin-top:85px;">
+							<div class="center-align">
+								<span class="white-text " style="font-size:28px; "> ΝΟΜΙΚΗ ΣΥΜΒΟΥΛΗ</span>
 							</div>
 						</div>
 						<div class="col s12 m10 offset-m1">
@@ -55,24 +62,24 @@
 					</div>
 					<div class="row">
 						<div class="col s10 offset-s1">
-							<h5 class="white-text full-text first-paragraph"><p >Το νομικό μας επιτελείο έχοντας πολυετή εμπειρία είναι σε θέση να απαντήσει σε κάθε νομικό σας ζήτημα ελληνικού δικαίου με απόλυτη εχεμύθεια.</p><p> Θέστε μας παρακάτω το θέμα που σας απασχολεί και εμείς δεσμευόμαστε να σας απαντήσουμε εντός τριών ωρών*.</p><p>Χωρίς δεσμεύσεις, χωρίς εγγραφές χρηστών. Τα στοιχεία σας χρησιμοποιούνται μόνο για την έκδοση απόδειξης/τιμολογίου.</p>ΤΙΜΗ 20 ευρώ η ερώτηση (ΤΟ ΦΠΑ 23% ΣΥΜΠΕΡΙΛΑΜΒΑΝΕΤΑΙ)</p><p>ΕΓΓΥΗΣΗ ΕΠΙΣΤΡΟΦΗΣ ΧΡΗΜΑΤΩΝ</p><p>Αν δεν σας απαντήσουμε εντός 24 ωρών σας επιστρέφουμε τα χρήματα σας!</p></h5>
+							<h5 class="white-text full-text first-paragraph"><p >Το νομικό μας επιτελείο έχοντας πολυετή εμπειρία είναι σε θέση να απαντήσει σε κάθε νομικό σας ζήτημα ελληνικού δικαίου με απόλυτη εχεμύθεια.</p><p> Θέστε μας παρακάτω το θέμα που σας απασχολεί και εμείς δεσμευόμαστε να σας απαντήσουμε εντός τριών ωρών*.</p><p>Χωρίς δεσμεύσεις, χωρίς εγγραφές χρηστών. Τα στοιχεία σας χρησιμοποιούνται μόνο για την έκδοση απόδειξης/τιμολογίου.</p>Τιμή 20 ευρώ η ερώτηση (το ΦΠΑ 23% συμπεριλαμβάνεται).</p><p class="center-align">ΕΓΓΥΗΣΗ ΕΠΙΣΤΡΟΦΗΣ ΧΡΗΜΑΤΩΝ</p><p>Αν δεν σας απαντήσουμε εντός 24 ωρών σας επιστρέφουμε τα χρήματα σας!</p></h5>
 
 							<form action="create_order.php" method="POST" onsubmit="return checkforblank()"  class="col s12 spacer-50">
 								<div class="row">
-									<div class="input-field col l10 offset-l1 m12">
+									<div class="input-field col s12 l10 offset-l1 ">
 										<i class="material-icons prefix">perm_identity</i>
 										<input  name="fname" id="fname" type="text" class="validate" >
-										<label for="icon_prefix">Oνοματεπώνυμο</label>
+										<label for="fname">Oνοματεπώνυμο</label>
 									</div>
-									<div class="input-field col l10 offset-l1 m12">
+									<div class="input-field col  s12 l10 offset-l1 ">
 										<i class="material-icons prefix">email</i>
 										<input  name="email" id="email" type="text" class="validate" >
-										<label for="icon_prefix">Email</label>
+										<label for="email">Email</label>
 									</div>
-									<div class="input-field col l10 offset-l1 m12">
+									<div class="input-field col s12 l10 offset-l1 ">
 										<i class="material-icons prefix">mode_edit</i>
 										<textarea name="text" id="text" type="text" class="materialize-textarea"></textarea>
-										<label for="icon_prefix2">Κείμενο...</label>
+										<label for="text">Η ερώτησή σας</label>
 									</div>
 								</div>
 								<p class="center-align">
@@ -82,7 +89,7 @@
 								</p>
 								<div class="row">
 									<div class="center-align">
-										<button type="submit" style="width:200px;" class="waves-effect waves-light btn-large">ΡΩΤΗΣΤΕ ΜΑΣ ΤΩΡΑ!</button>	
+										<button type="submit" style="width:205px;" class="waves-effect waves-light btn-large">ΡΩΤΗΣΤΕ ΜΑΣ ΤΩΡΑ!</button>	
 									</div>
 								</div>
 							</form>
@@ -91,11 +98,11 @@
 					<div class="row">
 						<div class="col s10 offset-s1" style="margin-bottom:-50px;">
 							<p class="full-text" style="margin-bottom:90px;">*Το 98% των απαντήσεων δίνονται εντός τριών ωρών. Σε ιδιαίτερα απαιτητικές περιπτώσεις ίσως χρειαστεί να περιμένετε λίγο περισσότερο. Μέγιστος χρόνος επεξεργασίας ερωτήσεων 24 ώρες.<br><br>
-								Εάν έχετε οποιεσδήποτε ερωτήσεις, παρατηρήσεις ή παράπονα σχετικά με το site παρακαλώ επικοινωνήστε μαζί μας στο nomikhsymvoulh@gmail.com.Το email αυτό είναι μόνο για ερωτήσεις σχετικά με την ιστοσελίδα. Νομικές ερωτήσεις δεν θα απαντηθούν.</p>
+								Εάν έχετε ερωτήσεις, παρατηρήσεις ή παράπονα σχετικά με το site παρακαλώ επικοινωνήστε μαζί μας στο nomikhsymvoulh@gmail.com.Το email αυτό είναι μόνο για ερωτήσεις σχετικά με την ιστοσελίδα. Νομικές ερωτήσεις δεν θα απαντηθούν.</p>
 							</div>		
 						</div>
 						<div class="card-action">
-							<p class="center-align" style="font-size:15px;">Copyright © 2015 www.nomikhsymvoulh.gr. All Rights Reserved. <a href="http://htmlcoder.me"> Crafted by iTech Hub </a></p>
+							<p class="center-align" style="font-size:15px;">Copyright © 2015 www.nomikhsymvoulh.gr. All Rights Reserved. Crafted by <a href="####">itech-hub.com</a></p>	
 						</div>
 					</div>	
 				</div>
